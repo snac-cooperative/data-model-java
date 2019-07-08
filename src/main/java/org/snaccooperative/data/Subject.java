@@ -49,8 +49,8 @@ class Subject extends AbstractTermData {
                 "                    \"language\": null,\n" +
                 "                    \"object\": null,\n" +
                 "                    \"note\": \"Parsed from SNAC EAC-CPF.\",\n" +
-                "                    \"id\": \"8280096\",\n" +
-                "                    \"version\": \"1201577\",\n" +
+                "                    \"id\": \"0\",\n" +
+                "                    \"version\": \"0\",\n" +
                 "                    \"operation\": null,\n" +
                 "                    \"dates\": []\n" +
                 "                },\n" +

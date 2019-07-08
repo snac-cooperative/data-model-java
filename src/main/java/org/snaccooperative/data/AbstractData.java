@@ -17,6 +17,7 @@
 
 package org.snaccooperative.data;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.ArrayList;
@@ -33,6 +34,7 @@ import java.util.List;
  * @author Robbie Hott
  * @author Tom Laudeman
  */
+@JsonInclude(JsonInclude.Include.NON_DEFAULT)
 public abstract class AbstractData {
 
     /**
@@ -344,7 +346,7 @@ public abstract class AbstractData {
      * is created by parsing a CPF file, both keys will be empty.
      *
      */
-    public void setDBInfo(int version, int id)
+    protected void setDBInfo(int version, int id)
     {
         if (version != 0)
         {
@@ -368,7 +370,7 @@ public abstract class AbstractData {
      * version of each object (SQL record), and id is the table.id, not the constellation id.
      *
      */
-    public int[] getDBInfo()
+    protected int[] getDBInfo()
     {
         return new int[] {this.version, this.id};
     }
@@ -464,4 +466,29 @@ public abstract class AbstractData {
         return this.operation;
     }
 
+    /**
+     * Cleanse sub elements
+     */
+    public void cleanseSubElements(String operation) {
+        String newOperation = AbstractData.OPERATION_INSERT;
+        if (operation != null) {
+            newOperation = operation;
+        }
+        if (this.dateList != null) {
+            for (SNACDate d : this.dateList) {
+                d.setID(0);
+                d.setVersion(0);
+                d.setOperation(newOperation);
+                d.cleanseSubElements(newOperation);
+            }
+        }
+        if (snacControlMetadata != null) {
+            for (SNACControlMetadata scm : snacControlMetadata) {
+                scm.setID(0);
+                scm.setVersion(0);
+                scm.setOperation(newOperation);
+                scm.cleanseSubElements(newOperation);
+            }
+        }
+    }
 }

@@ -16,6 +16,8 @@
  */
 package org.snaccooperative.data;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 /**
  * Vocabulary Term
  *
@@ -25,6 +27,7 @@ package org.snaccooperative.data;
  * @author Robbie Hott
  * @author Tom Laudeman
  */
+@JsonInclude(JsonInclude.Include.NON_DEFAULT)
 public class Term {
 
 

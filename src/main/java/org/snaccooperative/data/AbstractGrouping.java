@@ -16,6 +16,8 @@
  */
 package org.snaccooperative.data;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 /**
  * Abstract class for various grouping of user meta data
  *
@@ -24,6 +26,8 @@ package org.snaccooperative.data;
  * @author Tom Laudeman
  *
  */
+
+@JsonInclude(JsonInclude.Include.NON_DEFAULT)
 public class AbstractGrouping {
 
     /**
