@@ -53,6 +53,8 @@ public abstract class AbstractData {
      */
     public static final String OPERATION_DELETE = "delete";
 
+    public static final int MAX_LIST_SIZE = Integer.MAX_VALUE;
+
     /**
      * @var string dataType The data type of this object.
      *
