@@ -15,6 +15,8 @@
  */
 package org.snaccooperative.data;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -109,6 +111,7 @@ class Place extends AbstractData {
      *
      * @var snacdataGeoTerm geoTerm The controlled vocabulary term object for the geographical place
      */
+    @JsonProperty("geoplace")
     private GeoTerm geoTerm;
 
     /**

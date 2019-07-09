@@ -60,6 +60,7 @@ public abstract class AbstractData {
      *
      * This should be overwritten by any inheriting/child class
      */
+    @JsonInclude(JsonInclude.Include.ALWAYS)
     protected String dataType;
 
     /**
