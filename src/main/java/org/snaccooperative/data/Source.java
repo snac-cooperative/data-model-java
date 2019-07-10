@@ -26,7 +26,7 @@ package org.snaccooperative.data;
  * @author Robbie Hott
  *
  */
-class Source extends AbstractData {
+public class Source extends AbstractData {
 
     /**
      * Language

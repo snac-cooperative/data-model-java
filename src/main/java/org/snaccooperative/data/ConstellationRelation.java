@@ -23,7 +23,7 @@ package org.snaccooperative.data;
  * @author Robbie Hott
  *
  */
-class ConstellationRelation extends AbstractData {
+public class ConstellationRelation extends AbstractData {
 
     /**
      * Source Constellation ID

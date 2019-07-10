@@ -21,7 +21,7 @@ package org.snaccooperative.data;
  *
  * @author Robbie Hott
  */
-class Subject extends AbstractTermData {
+public class Subject extends AbstractTermData {
 
     /**
      * Constructor

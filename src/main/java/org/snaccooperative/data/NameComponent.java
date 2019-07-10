@@ -20,7 +20,7 @@ package org.snaccooperative.data;
  *
  * @author Robbie Hott
  */
-class NameComponent extends AbstractOrderedComponent {
+public class NameComponent extends AbstractOrderedComponent {
 
     /**
      * Constructor.

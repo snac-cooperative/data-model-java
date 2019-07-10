@@ -22,7 +22,7 @@ package org.snaccooperative.data;
  *
  * @author Robbie Hott
  */
-abstract class AbstractTermData extends AbstractData {
+public abstract class AbstractTermData extends AbstractData {
 
     /**
      * @var snacdataTerm term The term for this object

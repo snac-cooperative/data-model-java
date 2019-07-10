@@ -20,7 +20,7 @@ package org.snaccooperative.data;
  *
  * @author Robbie Hott
  */
-class Image extends AbstractData {
+public class Image extends AbstractData {
 
     /**
      * var string URL

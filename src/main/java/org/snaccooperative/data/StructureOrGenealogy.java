@@ -21,7 +21,7 @@ package org.snaccooperative.data;
  *
  * @author Robbie Hott
  */
-class StructureOrGenealogy extends AbstractTextData {
+public class StructureOrGenealogy extends AbstractTextData {
 
     /**
      * Constructor

@@ -38,7 +38,7 @@ import java.util.List;
  * @author Tom Laudeman
  *
  */
-class Place extends AbstractData {
+public class Place extends AbstractData {
 
     /**
      * Original place string from CPF

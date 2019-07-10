@@ -23,7 +23,7 @@ package org.snaccooperative.data;
  * @author Robbie Hott
  *
  */
-class MaintenanceEvent extends AbstractData {
+public class MaintenanceEvent extends AbstractData {
 
     /**
      * Event type

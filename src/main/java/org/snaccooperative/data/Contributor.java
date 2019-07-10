@@ -24,7 +24,7 @@ package org.snaccooperative.data;
  * @author Robbie Hott
  *
  */
-class Contributor extends AbstractData {
+public class Contributor extends AbstractData {
 
     /**
      * @var snacdataTerm Type of the contributor

@@ -27,7 +27,7 @@ import java.util.Map;
  * @author Robbie Hott
  *
  */
-class SNACDate extends AbstractData {
+public class SNACDate extends AbstractData {
 
     /**
      * Begin Date

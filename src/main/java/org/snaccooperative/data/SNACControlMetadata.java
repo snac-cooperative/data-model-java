@@ -24,7 +24,7 @@ package org.snaccooperative.data;
  *
  * @author Robbie Hott
  */
-class SNACControlMetadata extends AbstractData {
+public class SNACControlMetadata extends AbstractData {
 
 
     /**

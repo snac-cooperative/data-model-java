@@ -22,7 +22,7 @@ package org.snaccooperative.data;
  *
  * @author Robbie Hott
  */
-abstract class AbstractTextData extends AbstractData {
+public abstract class AbstractTextData extends AbstractData {
 
 
     /**

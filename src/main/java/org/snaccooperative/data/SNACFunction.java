@@ -23,7 +23,7 @@ package org.snaccooperative.data;
  * @author Robbie Hott
  *
  */
-class SNACFunction extends AbstractData {
+public class SNACFunction extends AbstractData {
 
     /**
      * Vocabulary Term

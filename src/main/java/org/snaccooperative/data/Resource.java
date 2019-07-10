@@ -26,7 +26,7 @@ import java.util.List;
  * @author Robbie Hott
  *
  */
-class Resource extends AbstractData {
+public class Resource extends AbstractData {
 
     /**
      * Document Type

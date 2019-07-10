@@ -23,7 +23,7 @@ package org.snaccooperative.data;
  * @author Robbie Hott
  *
  */
-class ResourceRelation extends AbstractData {
+public class ResourceRelation extends AbstractData {
 
     /**
      * Resource to which this is related

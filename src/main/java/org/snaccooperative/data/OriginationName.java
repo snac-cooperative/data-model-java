@@ -24,7 +24,7 @@ package org.snaccooperative.data;
  * @author Robbie Hott
  *
  */
-class OriginationName extends AbstractData {
+public class OriginationName extends AbstractData {
 
     /**
      * @var string Name of the originator (creator).

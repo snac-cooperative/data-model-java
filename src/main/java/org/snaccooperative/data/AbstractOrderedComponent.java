@@ -20,7 +20,7 @@ package org.snaccooperative.data;
  *
  * @author Robbie Hott
  */
-abstract class AbstractOrderedComponent extends AbstractData {
+public abstract class AbstractOrderedComponent extends AbstractData {
 
     /**
      * string text The text of the component

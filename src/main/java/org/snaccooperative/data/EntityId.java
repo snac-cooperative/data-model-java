@@ -21,7 +21,7 @@ package org.snaccooperative.data;
  * @author Robbie Hott
  *
  */
-class EntityId extends AbstractData {
+public class EntityId extends AbstractData {
 
     /**
      * @var string text of this entityId

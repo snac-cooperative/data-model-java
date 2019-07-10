@@ -21,7 +21,7 @@ package org.snaccooperative.data;
  * @author Robbie Hott
  *
  */
-class SameAs extends AbstractData {
+public class SameAs extends AbstractData {
 
     /**
      * @var string text of this sameAs or otherRecordID

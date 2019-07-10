@@ -21,7 +21,7 @@ package org.snaccooperative.data;
  *
  * @author Robbie Hott
  */
-class Mandate extends AbstractTextData {
+public class Mandate extends AbstractTextData {
 
     /**
      * Constructor

@@ -68,7 +68,7 @@ import java.util.List;
  */
 
 @JsonInclude(JsonInclude.Include.NON_DEFAULT)
-class Constellation extends AbstractData {
+public class Constellation extends AbstractData {
 
     /**
      * ARK ID
@@ -562,7 +562,7 @@ class Constellation extends AbstractData {
             return this.preferredNameEntry;
 
         double max = 0;
-        id = 0;
+        int id = 0;
         for (int i = 0; i < nameEntries.size(); i++) {
             if (nameEntries.get(i).getPreferenceScore() > max) {
                 max = nameEntries.get(i).getPreferenceScore();
@@ -1610,7 +1610,6 @@ class Constellation extends AbstractData {
      * removing IDs and version numbers for all elements except sources.  Sets all
      * other operations to INSERT so they are considered new in this Constellation.
      *
-     * @param snacdataConstellation other The constellation to combine with this one
      * @return boolean True if success, false otherwise (currently no failure)
     public void combine(Constellation other) {
         //      merge the sources, keeping a list of other's sources
@@ -1860,5 +1859,17 @@ class Constellation extends AbstractData {
             e.printStackTrace();
         }
 
+    }
+
+    public static Constellation readFromFile(File file) {
+        try {
+            ObjectMapper om = new ObjectMapper();
+            //om.enable(SerializationFeature.INDENT_OUTPUT);
+            Constellation c = om.readValue(file, Constellation.class);
+
+            return c;
+        } catch (Exception e) {
+            return null;
+        }
     }
 }

@@ -21,7 +21,7 @@ package org.snaccooperative.data;
  * @author Robbie Hott
  *
  */
-class BiogHist extends AbstractData {
+public class BiogHist extends AbstractData {
 
     /**
      *

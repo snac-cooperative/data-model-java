@@ -20,7 +20,7 @@ package org.snaccooperative.data;
  *
  * @author Robbie Hott
  */
-class AddressLine extends AbstractOrderedComponent {
+public class AddressLine extends AbstractOrderedComponent {
 
     /**
      * Constructor.

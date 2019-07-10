@@ -24,7 +24,7 @@ package org.snaccooperative.data;
  * @author Robbie Hott
  *
  */
-class Occupation extends AbstractData {
+public class Occupation extends AbstractData {
 
     /**
      * Occupation Term

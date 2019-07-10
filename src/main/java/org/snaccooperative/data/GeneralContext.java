@@ -21,7 +21,7 @@ package org.snaccooperative.data;
  *
  * @author Robbie Hott
  */
-class GeneralContext extends AbstractTextData {
+public class GeneralContext extends AbstractTextData {
 
     /**
      * Constructor

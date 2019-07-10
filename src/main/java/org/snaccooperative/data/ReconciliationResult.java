@@ -27,7 +27,7 @@ import java.util.Map;
  *
  * @author Robbie Hott
  */
-class ReconciliationResult extends AbstractData {
+public class ReconciliationResult extends AbstractData {
 
 
     /**

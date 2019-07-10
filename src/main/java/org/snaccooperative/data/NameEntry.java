@@ -25,7 +25,7 @@ import java.util.List;
  * @author Robbie Hott
  *
  */
-class NameEntry extends AbstractData {
+public class NameEntry extends AbstractData {
 
     /**
      * Original string for the name
