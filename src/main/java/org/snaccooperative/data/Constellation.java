@@ -1872,4 +1872,24 @@ public class Constellation extends AbstractData {
             return null;
         }
     }
+
+    public static Constellation fromJSON(String s) {
+        try {
+            ObjectMapper om = new ObjectMapper();
+            Constellation c = om.readValue(s, Constellation.class);
+            return c;
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
+    public static String toJSON(Constellation c) {
+        try {
+            ObjectMapper om = new ObjectMapper();
+            om.enable(SerializationFeature.INDENT_OUTPUT);
+            return om.writeValueAsString(c);
+        } catch (Exception e) {
+            return null;
+        }
+    }
 }
