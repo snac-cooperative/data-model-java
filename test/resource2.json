@@ -1,0 +1,144 @@
+{
+    "dataType": "Resource",
+    "documentType": {
+        "id": "696",
+        "term": "ArchivalResource",
+        "uri": "http:\/\/socialarchive.iath.virginia.edu\/control\/term#ArchivalResource",
+        "type": "document_type"
+    },
+    "link": "http:\/\/www.worldcat.org\/oclc\/122580918",
+    "source": "<objectXMLWrap>\n               <mods xmlns=\"http:\/\/www.loc.gov\/mods\/v3\">\n                  <recordInfo>\n                     <recordOrigin>WorldCat:122580918<\/recordOrigin>\n                     <recordContentSource>ISIL:OCLC-AB035<\/recordContentSource>\n                  <\/recordInfo>\n                  <name>\n                     <namePart>Washington, Charles, b. 1738.<\/namePart>\n                     <role>\n                        <roleTerm valueURI=\"http:\/\/id.loc.gov\/vocabulary\/relators\/cre\">Creator<\/roleTerm>\n                     <\/role>\n                  <\/name>\n                  <name>\n                     <namePart>Washington, George, 1732-1799,<\/namePart>\n                     <role>\n                        <roleTerm valueURI=\"http:\/\/id.loc.gov\/vocabulary\/relators\/cre\">Creator<\/roleTerm>\n                     <\/role>\n                  <\/name>\n                  <name>\n                     <namePart>Kountze, De Lancey, d. 1946,<\/namePart>\n                     <role>\n                        <roleTerm valueURI=\"http:\/\/id.loc.gov\/vocabulary\/relators\/cre\">Creator<\/roleTerm>\n                     <\/role>\n                  <\/name>\n                  <titleInfo>\n                     <title>ALS : Stafford County, Va., to George Washington, [1789 Jan. 7].<\/title>\n                  <\/titleInfo>\n                  <abstract>Concerns his financial difficulties.  Date from docket note. <\/abstract>\n                  <name>\n                     <namePart>Rosenbach Museum &amp; Library<\/namePart>\n                     <role>\n                        <roleTerm valueURI=\"http:\/\/id.loc.gov\/vocabulary\/relators\/rps\">Repository<\/roleTerm>\n                     <\/role>\n                  <\/name>\n               <\/mods>\n            <\/objectXMLWrap>",
+    "title": "ALS : Stafford County, Va., to George Washington, [1789 Jan. 7].",
+    "abstract": "Concerns his financial difficulties.  Date from docket note. ",
+    "extent": "1 item (1 p.) ; 21 cm.",
+    "displayEntry": "Washington, Charles, b. 1738. ALS : Stafford County, Va., to George Washington, [1789 Jan. 7].",
+    "originationNames": [
+        {
+            "dataType": "OriginationName",
+            "name": "Washington, Charles, b. 1738.",
+            "id": "8549445",
+            "version": "6775165"
+        },
+        {
+            "dataType": "OriginationName",
+            "name": "Washington, George, 1732-1799,",
+            "id": "8549446",
+            "version": "6775165"
+        },
+        {
+            "dataType": "OriginationName",
+            "name": "Kountze, De Lancey, d. 1946,",
+            "id": "8549447",
+            "version": "6775165"
+        }
+    ],
+    "repository": {
+        "dataType": "Constellation",
+        "ark": "http:\/\/n2t.net\/ark:\/99166\/w63c6nrj",
+        "entityType": {
+            "id": "698",
+            "term": "corporateBody",
+            "uri": "http:\/\/socialarchive.iath.virginia.edu\/control\/term#CorporateBody",
+            "type": "entity_type"
+        },
+        "nameEntries": [
+            {
+                "dataType": "NameEntry",
+                "original": "Rosenbach Museum & Library",
+                "preferenceScore": "99",
+                "id": "76780776",
+                "version": "11231785"
+            }
+        ],
+        "places": [
+            {
+                "dataType": "Place",
+                "original": "Rosenbach Museum & Library",
+                "type": {
+                    "id": "400242",
+                    "term": "Address",
+                    "uri": "http:\/\/socialarchive.iath.virginia.edu\/control\/term#Address",
+                    "type": "place_type"
+                },
+                "address": [
+                    {
+                        "dataType": "AddressLine",
+                        "text": "2010 Delancey Pl",
+                        "order": "0",
+                        "type": {
+                            "id": "400243",
+                            "term": "Unspecified",
+                            "uri": "http:\/\/socialarchive.iath.virginia.edu\/control\/term#Unspecified",
+                            "type": "address_part"
+                        },
+                        "id": "76780781",
+                        "version": "11231785"
+                    },
+                    {
+                        "dataType": "AddressLine",
+                        "text": "Philadelphia",
+                        "order": "1",
+                        "type": {
+                            "id": "400243",
+                            "term": "Unspecified",
+                            "uri": "http:\/\/socialarchive.iath.virginia.edu\/control\/term#Unspecified",
+                            "type": "address_part"
+                        },
+                        "id": "76780782",
+                        "version": "11231785"
+                    },
+                    {
+                        "dataType": "AddressLine",
+                        "text": "US-PA",
+                        "order": "2",
+                        "type": {
+                            "id": "400243",
+                            "term": "Unspecified",
+                            "uri": "http:\/\/socialarchive.iath.virginia.edu\/control\/term#Unspecified",
+                            "type": "address_part"
+                        },
+                        "id": "76780783",
+                        "version": "11231785"
+                    },
+                    {
+                        "dataType": "AddressLine",
+                        "text": "19103",
+                        "order": "3",
+                        "type": {
+                            "id": "400243",
+                            "term": "Unspecified",
+                            "uri": "http:\/\/socialarchive.iath.virginia.edu\/control\/term#Unspecified",
+                            "type": "address_part"
+                        },
+                        "id": "76780784",
+                        "version": "11231785"
+                    },
+                    {
+                        "dataType": "AddressLine",
+                        "text": "US",
+                        "order": "4",
+                        "type": {
+                            "id": "400243",
+                            "term": "Unspecified",
+                            "uri": "http:\/\/socialarchive.iath.virginia.edu\/control\/term#Unspecified",
+                            "type": "address_part"
+                        },
+                        "id": "76780785",
+                        "version": "11231785"
+                    }
+                ],
+                "geoplace": {
+                    "id": "15967",
+                    "name": "Rosenbach Museum & Library",
+                    "latitude": "39.9473000",
+                    "longitude": "-75.1749000"
+                },
+                "confirmed": true,
+                "id": "76780780",
+                "version": "11231785"
+            }
+        ],
+        "id": "76780775",
+        "version": "11231788"
+    }
+}

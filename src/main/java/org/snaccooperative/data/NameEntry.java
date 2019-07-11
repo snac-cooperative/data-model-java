@@ -237,7 +237,8 @@ public class NameEntry extends AbstractData {
             return false;
 
         NameEntry n = (NameEntry) other;
-        if (!this.getOriginal().equals(n.getOriginal()))
+        if ((this.getOriginal() != null && ! this.getOriginal().equals(n.getOriginal())) ||
+                (this.getOriginal() == null && n.getOriginal() != null))
             return false;
         if (this.getPreferenceScore() != n.getPreferenceScore())
             return false;

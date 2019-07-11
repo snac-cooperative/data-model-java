@@ -124,9 +124,11 @@ public class EntityId extends AbstractData {
             return false;
 
         EntityId e = (EntityId) other;
-        if (!this.getText().equals(e.getText()))
+        if ((this.getText() != null && !this.getText().equals(e.getText())) ||
+                (this.getText() == null && e.getText() != null))
             return false;
-        if (!this.getURI().equals(e.getURI()))
+        if ((this.getURI() != null && !this.getURI().equals(e.getURI())) ||
+                (this.getURI() == null && e.getURI() != null))
             return false;
 
         if ((this.getType() != null && !this.getType().equals(e.getType())) ||

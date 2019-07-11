@@ -382,13 +382,15 @@ public class Place extends AbstractData {
 
         Place p = (Place) other;
 
-        if (!this.getOriginal().equals(p.getOriginal()))
+        if ((this.getOriginal() != null && ! this.getOriginal().equals(p.getOriginal())) ||
+                (this.getOriginal() == null && p.getOriginal() != null))
             return false;
         if (this.getScore() != p.getScore())
             return false;
         if (this.getConfirmed() != p.getConfirmed())
             return false;
-        if (!this.getNote().equals(p.getNote()))
+        if ((this.getNote() != null && ! this.getNote().equals(p.getNote())) ||
+                (this.getNote() == null && p.getNote() != null))
             return false;
 
         if ((this.getType() != null && ! this.getType().equals(p.getType())) ||

@@ -166,9 +166,11 @@ public class Occupation extends AbstractData {
             return false;
 
         Occupation o = (Occupation) other;
-        if (!this.getVocabularySource().equals(o.getVocabularySource()))
+        if ((this.getVocabularySource() != null && !this.getVocabularySource().equals(o.getVocabularySource())) ||
+                (this.getVocabularySource() == null && o.getVocabularySource() != null))
             return false;
-        if (!this.getNote().equals(o.getNote()))
+        if ((this.getNote() != null && !this.getNote().equals(o.getNote())) ||
+                (this.getNote() == null && o.getNote() != null))
             return false;
 
         if ((this.getTerm() != null && !this.getTerm().equals(o.getTerm())) ||

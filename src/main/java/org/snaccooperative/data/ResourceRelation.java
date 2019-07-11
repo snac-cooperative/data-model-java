@@ -192,9 +192,11 @@ public class ResourceRelation extends AbstractData {
             return false;
 
         ResourceRelation r = (ResourceRelation) other;
-        if (!this.getContent().equals(r.getContent()))
+        if ((this.getContent() != null && ! this.getContent().equals(r.getContent())) ||
+                (this.getContent() == null && r.getContent() != null))
             return false;
-        if (!this.getNote().equals(r.getNote()))
+        if ((this.getNote() != null && ! this.getNote().equals(r.getNote())) ||
+                (this.getNote() == null && r.getNote() != null))
             return false;
 
         if ((this.getResource() != null && ! this.getResource().equals(r.getResource())) ||

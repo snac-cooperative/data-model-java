@@ -498,19 +498,24 @@ public class SNACDate extends AbstractData {
         SNACDate d = (SNACDate) other;
         if (this.getFromBC() != d.getFromBC())
             return false;
-        if (!this.getFromDate().equals(d.getFromDate()))
-            return false;
-        if (!this.getFromDateOriginal().equals(d.getFromDateOriginal()))
-            return false;
         if (this.getToBC() != d.getToBC())
-            return false;
-        if (!this.getToDate().equals(d.getToDate()))
-            return false;
-        if (!this.getToDateOriginal().equals(d.getToDateOriginal()))
             return false;
         if (this.getIsRange() != d.getIsRange())
             return false;
-        if (!this.getNote().equals(d.getNote()))
+        if ((this.getFromDate() != null && ! this.getFromDate().equals(d.getFromDate())) ||
+                (this.getFromDate() == null && d.getFromDate() != null))
+            return false;
+        if ((this.getFromDateOriginal() != null && ! this.getFromDateOriginal().equals(d.getFromDateOriginal())) ||
+                (this.getFromDateOriginal() == null && d.getFromDateOriginal() != null))
+            return false;
+        if ((this.getToDateOriginal() != null && ! this.getToDateOriginal().equals(d.getToDateOriginal())) ||
+                (this.getToDateOriginal() == null && d.getToDateOriginal() != null))
+            return false;
+        if ((this.getToDate() != null && ! this.getToDate().equals(d.getToDate())) ||
+                (this.getToDate() == null && d.getToDate() != null))
+            return false;
+        if ((this.getNote() != null && ! this.getNote().equals(d.getNote())) ||
+                (this.getNote() == null && d.getNote() != null))
             return false;
 
 

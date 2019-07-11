@@ -124,9 +124,11 @@ public class SameAs extends AbstractData {
 
         SameAs s = (SameAs) other;
 
-        if (!this.getText().equals(s.getText()))
+        if ((this.getText() != null && ! this.getText().equals(s.getText())) ||
+                (this.getText() == null && s.getText() != null))
             return false;
-        if (!this.getURI().equals(s.getURI()))
+        if ((this.getURI() != null && ! this.getURI().equals(s.getURI())) ||
+                (this.getURI() == null && s.getURI() != null))
             return false;
 
         if ((this.getType() != null && ! this.getType().equals(s.getType())) ||

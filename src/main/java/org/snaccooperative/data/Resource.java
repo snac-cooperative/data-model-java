@@ -15,6 +15,10 @@
  */
 package org.snaccooperative.data;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
+
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -459,20 +463,25 @@ public class Resource extends AbstractData {
         if (other == null || ! (other instanceof Resource))
             return false;
 
+
         if (!super.equals(other))
             return false;
 
         Resource r = (Resource) other;
-        if (!this.getTitle().equals(r.getTitle()))
+        if ((this.getTitle() != null && ! this.getTitle().equals(r.getTitle())) ||
+                (this.getTitle() == null && r.getTitle() != null))
             return false;
-        if (!this.getAbstract().equals(r.getAbstract()))
+        if ((this.getAbstract() != null && ! this.getAbstract().equals(r.getAbstract())) ||
+                (this.getAbstract() == null && r.getAbstract() != null))
             return false;
-        if (!this.getExtent().equals(r.getExtent()))
+        if ((this.getSource() != null && ! this.getSource().equals(r.getSource())) ||
+                (this.getSource() == null && r.getSource() != null))
             return false;
-
-        if (!this.getSource().equals(r.getSource()))
+        if ((this.getExtent() != null && ! this.getExtent().equals(r.getExtent())) ||
+                (this.getExtent() == null && r.getExtent() != null))
             return false;
-        if (!this.getLink().equals(r.getLink()))
+        if ((this.getLink() != null && ! this.getLink().equals(r.getLink())) ||
+                (this.getLink() == null && r.getLink() != null))
             return false;
 
         if ((this.getDocumentType() != null && ! this.getDocumentType().equals(r.getDocumentType())) ||
@@ -490,5 +499,49 @@ public class Resource extends AbstractData {
             return false;
 
         return true;
+    }
+
+    @Override
+    public int hashCode() {
+        return Resource.toJSON(this).hashCode();
+    }
+
+    public static Resource fromJSON(String s) {
+        try {
+            ObjectMapper om = new ObjectMapper();
+            Resource r = om.readValue(s, Resource.class);
+            return r;
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
+    public static String toJSON(Resource r) {
+        try {
+            ObjectMapper om = new ObjectMapper();
+            om.enable(SerializationFeature.INDENT_OUTPUT);
+            return om.writeValueAsString(r);
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
+    public static Resource readFromFile(File file) {
+        try {
+            ObjectMapper om = new ObjectMapper();
+            //om.enable(SerializationFeature.INDENT_OUTPUT);
+            Resource r = om.readValue(file, Resource.class);
+
+            return r;
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
+    public static void main(String[] args) {
+        Resource r = Resource.readFromFile(new File("test/resource.json"));
+        Resource r2 = Resource.readFromFile(new File("test/resource.json"));
+
+        System.out.println(r.equals(r2));
     }
 }

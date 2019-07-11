@@ -1198,7 +1198,8 @@ public class Constellation extends AbstractData {
 
         Constellation c = (Constellation) other;
 
-        if (!this.getArk().equals(c.getArk()))
+        if ((this.getArk() != null && ! this.getArk().equals(c.getArk())) ||
+                (this.getArk() == null && c.getArk() != null))
             return false;
 
         if ((this.getEntityType() != null && ! this.getEntityType().equals(c.getEntityType())) ||

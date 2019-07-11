@@ -65,7 +65,9 @@ public abstract class AbstractTextData extends AbstractData {
         if (!super.equals(other))
             return false;
 
-        if (!this.getText().equals(((AbstractTextData) other).getText()))
+        AbstractTextData a = (AbstractTextData) other;
+        if ((this.getText() != null && ! this.getText().equals(a.getText())) ||
+                (this.getText() == null && a.getText() != null))
             return false;
 
         return true;

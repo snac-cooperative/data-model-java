@@ -74,9 +74,9 @@ public class OriginationName extends AbstractData {
             return false;
 
         OriginationName o = (OriginationName) other;
-        if (!this.getName().equals(o.getName()))
+        if ((this.getName() != null && !this.getName().equals(o.getName())) ||
+                (this.getName() == null && o.getName() != null))
             return false;
-
         return true;
     }
 }

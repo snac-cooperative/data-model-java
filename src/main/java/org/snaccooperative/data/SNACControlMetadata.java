@@ -213,11 +213,14 @@ public class SNACControlMetadata extends AbstractData {
             return false;
 
         SNACControlMetadata s = (SNACControlMetadata) other;
-        if (!this.getSubCitation().equals(s.getSubCitation()))
+        if ((this.getSubCitation() != null && ! this.getSubCitation().equals(s.getSubCitation())) ||
+                (this.getSubCitation() == null && s.getSubCitation() != null))
             return false;
-        if (!this.getSourceData().equals(s.getSourceData()))
+        if ((this.getSourceData() != null && ! this.getSourceData().equals(s.getSourceData())) ||
+                (this.getSourceData() == null && s.getSourceData() != null))
             return false;
-        if (!this.getNote().equals(s.getNote()))
+        if ((this.getNote() != null && ! this.getNote().equals(s.getNote())) ||
+                (this.getNote() == null && s.getNote() != null))
             return false;
 
         // Citations are special. They are Source objects, but they may not be completely filled in.  In fact, the only thing we may know

@@ -126,33 +126,27 @@ public abstract class AbstractData {
      * must match exactly.  It allows for a parameter to enable skipping of the ID/version/operation
      * matching.
      */
-    /*public boolean equals(Object other) {
+    public boolean equals(Object other) {
 
-        if (other == null || !(other instanceOf snacdataAbstractData))
+        if (other == null || !(other instanceof AbstractData))
             return false;
 
-        if (strict) {
-            if (this.getID() != other->getID())
-                return false;
-            if (this.getVersion() != other->getVersion())
-                return false;
-            if (this.getOperation() != other->getOperation())
-                return false;
-        }
+        AbstractData a = (AbstractData) other;
+        if (this.getID() != a.getID())
+            return false;
+        if (this.getVersion() != a.getVersion())
+            return false;
+        //if (this.getOperation() != other->getOperation())
+        //    return false;
 
 
-        if (this.getMaxDateCount() != other->getMaxDateCount())
+        if (this.getMaxDateCount() != a.getMaxDateCount())
             return false;
 
         if (this.getMaxDateCount() > 0) {
-            tmp = array();
-
-            if (!this.checkArrayEqual(this.getDateList(), other->getDateList(), strict, checkSubcomponents))
+            if (!(this.getDateList().containsAll(a.getDateList()) && a.getDateList().containsAll(this.getDateList())))
                 return false;
         }
-
-        if (checkSubcomponents && !this.checkArrayEqual(this.getSNACControlMetadata(), other->getSNACControlMetadata(), strict, checkSubcomponents))
-            return false;
 
         // If all the tests pass, they are equal
         return true;

@@ -108,7 +108,8 @@ public abstract class AbstractOrderedComponent extends AbstractData {
         if (! super.equals(other))
             return false;
 
-        if (!this.getText().equals(a.getText()))
+        if ((this.getText() != null && ! this.getText().equals(a.getText())) ||
+                (this.getText() == null && a.getText() != null))
             return false;
         if (this.getOrder() != a.getOrder())
             return false;

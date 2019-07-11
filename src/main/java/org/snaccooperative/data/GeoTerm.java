@@ -278,16 +278,26 @@ public class GeoTerm {
                         return false;
             }
 
-            if (this.getName().equals(g.getName()) &&
-                    this.getURI().equals(g.getURI()) &&
-                    this.getLatitude() == g.getLatitude() &&
-                    this.getLongitude() == g.getLongitude() &&
-                    this.getAdministrationCode().equals(g.getAdministrationCode()) &&
-                    this.getCountryCode().equals(g.getCountryCode())) {
-                        return true;
-                    }
+            if (this.getLatitude() != g.getLatitude() ||
+                    this.getLongitude() != g.getLongitude()) {
+                        return false;
+            }
+
+
+            if ((this.getName() != null && !this.getName().equals(g.getName())) ||
+                    (this.getName() == null && g.getName() != null))
+                return false;
+            if ((this.getURI() != null && !this.getURI().equals(g.getURI())) ||
+                    (this.getURI() == null && g.getURI() != null))
+                return false;
+            if ((this.getAdministrationCode() != null && !this.getAdministrationCode().equals(g.getAdministrationCode())) ||
+                    (this.getAdministrationCode() == null && g.getAdministrationCode() != null))
+                return false;
+            if ((this.getCountryCode() != null && !this.getCountryCode().equals(g.getCountryCode())) ||
+                    (this.getCountryCode() == null && g.getCountryCode() != null))
+                return false;
         }
-        return false;
+        return true;
     }
 
 }

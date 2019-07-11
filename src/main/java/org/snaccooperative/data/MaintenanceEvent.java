@@ -224,13 +224,17 @@ public class MaintenanceEvent extends AbstractData {
             return false;
 
         MaintenanceEvent m = (MaintenanceEvent) other;
-        if (!this.getEventDateTime().equals(m.getEventDateTime()))
+        if ((this.getEventDateTime() != null && ! this.getEventDateTime().equals(m.getEventDateTime())) ||
+                (this.getEventDateTime() == null && m.getEventDateTime() != null))
             return false;
-        if (!this.getStandardDateTime().equals(m.getStandardDateTime()))
+        if ((this.getStandardDateTime() != null && ! this.getStandardDateTime().equals(m.getStandardDateTime())) ||
+                (this.getStandardDateTime() == null && m.getStandardDateTime() != null))
             return false;
-        if (!this.getAgent().equals(m.getAgent()))
+        if ((this.getAgent() != null && ! this.getAgent().equals(m.getAgent())) ||
+                (this.getAgent() == null && m.getAgent() != null))
             return false;
-        if (!this.getEventDescription().equals(m.getEventDescription()))
+        if ((this.getEventDescription() != null && ! this.getEventDescription().equals(m.getEventDescription())) ||
+                (this.getEventDescription() == null && m.getEventDescription() != null))
             return false;
 
         if ((this.getEventType() != null && ! this.getEventType().equals(m.getEventType())) ||

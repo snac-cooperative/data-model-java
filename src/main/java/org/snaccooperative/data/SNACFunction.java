@@ -196,9 +196,11 @@ public class SNACFunction extends AbstractData {
 
         SNACFunction f = (SNACFunction) other;
 
-        if (!this.getVocabularySource().equals(f.getVocabularySource()))
+        if ((this.getVocabularySource() != null && ! this.getVocabularySource().equals(f.getVocabularySource())) ||
+                (this.getVocabularySource() == null && f.getVocabularySource() != null))
             return false;
-        if (!this.getNote().equals(f.getNote()))
+        if ((this.getNote() != null && ! this.getNote().equals(f.getNote())) ||
+                (this.getNote() == null && f.getNote() != null))
             return false;
 
         if ((this.getTerm() != null && ! this.getTerm().equals(f.getTerm())) ||

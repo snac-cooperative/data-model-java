@@ -129,7 +129,8 @@ public class Contributor extends AbstractData {
             return false;
 
         Contributor c = (Contributor) other;
-        if (!this.getName().equals(c.getName()))
+        if ((this.getName() != null && !(this.getName().equals(c.getName()))) ||
+                (this.getName() == null && c.getName() != null))
             return false;
 
         if ((this.getType() != null && !(this.getType().equals(c.getType()))) ||

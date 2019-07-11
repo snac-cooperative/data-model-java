@@ -201,25 +201,32 @@ public class Image extends AbstractData {
 
         Image i = (Image) other;
 
-        if (!this.getURL().equals(i.getURL()))
+        if ((this.getURL() != null && !this.getURL().equals(i.getURL())) ||
+                (this.getURL() == null && i.getURL() != null))
             return false;
 
-        if (!this.getInfo().equals(i.getInfo()))
+        if ((this.getInfo() != null && !this.getInfo().equals(i.getInfo())) ||
+                (this.getInfo() == null && i.getInfo() != null))
             return false;
 
-        if (!this.getInfoURL().equals(i.getInfoURL()))
+        if ((this.getInfoURL() != null && !this.getInfoURL().equals(i.getInfoURL())) ||
+                (this.getInfoURL() == null && i.getInfoURL() != null))
             return false;
 
-        if (!this.getAuthor().equals(i.getAuthor()))
+        if ((this.getAuthor() != null && !this.getAuthor().equals(i.getAuthor())) ||
+                (this.getAuthor() == null && i.getAuthor() != null))
             return false;
 
-        if (!this.getAuthorURL().equals(i.getAuthorURL()))
+        if ((this.getAuthorURL() != null && !this.getAuthorURL().equals(i.getAuthorURL())) ||
+                (this.getAuthorURL() == null && i.getAuthorURL() != null))
             return false;
 
-        if (!this.getLicense().equals(i.getLicense()))
+        if ((this.getLicense() != null && !this.getLicense().equals(i.getLicense())) ||
+                (this.getLicense() == null && i.getLicense() != null))
             return false;
 
-        if (!this.getLicenseURL().equals(i.getLicenseURL()))
+        if ((this.getLicenseURL() != null && !this.getLicenseURL().equals(i.getLicenseURL())) ||
+                (this.getLicenseURL() == null && i.getLicenseURL() != null))
             return false;
 
         return true;

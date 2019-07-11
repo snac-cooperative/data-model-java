@@ -140,7 +140,8 @@ public class BiogHist extends AbstractData {
 
         BiogHist b = (BiogHist) other;
 
-        if (!this.getText().equals(b.getText()))
+        if ((this.getText() != null && !this.getText().equals(b.getText())) ||
+                (this.getText() == null && b.getText() != null))
             return false;
 
         if ((this.getLanguage() != null && !this.getLanguage().equals(b.getLanguage())) ||

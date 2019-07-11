@@ -215,13 +215,17 @@ public class Source extends AbstractData {
             return false;
 
         Source s = (Source) other;
-        if (!(this.getDisplayName().equals(s.getDisplayName())))
+        if ((this.getDisplayName() != null && ! this.getDisplayName().equals(s.getDisplayName())) ||
+                (this.getDisplayName() == null && s.getDisplayName() != null))
             return false;
-        if (!this.getText().equals(s.getText()))
+        if ((this.getText() != null && ! this.getText().equals(s.getText())) ||
+                (this.getText() == null && s.getText() != null))
             return false;
-        if (!this.getURI().equals(s.getURI()))
+        if ((this.getURI() != null && ! this.getURI().equals(s.getURI())) ||
+                (this.getURI() == null && s.getURI() != null))
             return false;
-        if (!this.getNote().equals(s.getNote()))
+        if ((this.getNote() != null && ! this.getNote().equals(s.getNote())) ||
+                (this.getNote() == null && s.getNote() != null))
             return false;
 
         // Right now, we will ignore Type, since it is always "simple"

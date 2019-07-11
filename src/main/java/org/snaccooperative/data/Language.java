@@ -162,9 +162,11 @@ public class Language extends AbstractData {
             return false;
 
         Language l = (Language) other;
-        if (!this.getVocabularySource().equals(l.getVocabularySource()))
+        if ( (this.getVocabularySource() != null && !this.getVocabularySource().equals(l.getVocabularySource())) ||
+                (this.getVocabularySource() == null && l.getVocabularySource() != null))
             return false;
-        if (!this.getNote().equals(l.getNote()))
+        if ( (this.getNote() != null && !this.getNote().equals(l.getNote())) ||
+                (this.getNote() == null && l.getNote() != null))
             return false;
 
         if ( (this.getScript() != null && !this.getScript().equals(l.getScript())) ||

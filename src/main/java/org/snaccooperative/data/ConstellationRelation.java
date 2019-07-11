@@ -392,11 +392,19 @@ public class ConstellationRelation extends AbstractData {
             return false;
 
         ConstellationRelation c = (ConstellationRelation) other;
-        if (!this.getSourceArkID().equals(c.getSourceArkID()) ||
-                this.getTargetConstellation() != c.getTargetConstellation() ||
-                !this.getTargetArkID().equals(c.getTargetArkID()) ||
-                !this.getContent().equals(c.getContent()) ||
-                !this.getNote().equals(c.getNote()))
+        if (this.getTargetConstellation() != c.getTargetConstellation())
+            return false;
+        if ((this.getSourceArkID() != null && !(this.getSourceArkID().equals(c.getSourceArkID()))) ||
+                (this.getSourceArkID() == null && c.getSourceArkID() != null))
+            return false;
+        if ((this.getTargetArkID() != null && !(this.getTargetArkID().equals(c.getTargetArkID()))) ||
+                (this.getTargetArkID() == null && c.getTargetArkID() != null))
+            return false;
+        if ((this.getContent() != null && !(this.getContent().equals(c.getContent()))) ||
+                (this.getContent() == null && c.getContent() != null))
+            return false;
+        if ((this.getNote() != null && !(this.getNote().equals(c.getNote()))) ||
+                (this.getNote() == null && c.getNote() != null))
             return false;
 
         if ((this.getType() != null && !(this.getType().equals(c.getType()))) ||
