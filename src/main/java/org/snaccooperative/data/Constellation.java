@@ -23,8 +23,6 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-//public function toArray(shorten = true) {
-//    return = array(
     /*        "dataType" => "Constellation",
             "status" => this.status,
             "ark" => this.ark,
@@ -1806,6 +1804,153 @@ public class Constellation extends AbstractData {
     }
      */
 
+    public void cleanseSubElements(String operation) {
+        super.cleanseSubElements(operation);
+
+
+        // SCM, gained by AbstractData (but shouldn't be used on the high-level constellation)
+        for (AbstractData element : snacControlMetadata) {
+            element.setID(0);
+            element.setVersion(0);
+            element.setOperation(operation);
+            element.cleanseSubElements(operation);
+        }
+
+        for (AbstractData element : sources) {
+            element.setID(0);
+            element.setVersion(0);
+            element.setOperation(operation);
+            element.cleanseSubElements(operation);
+        }
+
+        for (AbstractData element : mandates) {
+            element.setID(0);
+            element.setVersion(0);
+            element.setOperation(operation);
+            element.cleanseSubElements(operation);
+        }
+
+        for (AbstractData element : structureOrGenealogies) {
+            element.setID(0);
+            element.setVersion(0);
+            element.setOperation(operation);
+            element.cleanseSubElements(operation);
+        }
+
+        for (AbstractData element : generalContexts) {
+            element.setID(0);
+            element.setVersion(0);
+            element.setOperation(operation);
+            element.cleanseSubElements(operation);
+        }
+
+        for (AbstractData element : biogHists) {
+            element.setID(0);
+            element.setVersion(0);
+            element.setOperation(operation);
+            element.cleanseSubElements(operation);
+        }
+
+        for (AbstractData element : conventionDeclarations) {
+            element.setID(0);
+            element.setVersion(0);
+            element.setOperation(operation);
+            element.cleanseSubElements(operation);
+        }
+
+        for (AbstractData element : nationalities) {
+            element.setID(0);
+            element.setVersion(0);
+            element.setOperation(operation);
+            element.cleanseSubElements(operation);
+        }
+
+        for (AbstractData element : otherRecordIDs) {
+            element.setID(0);
+            element.setVersion(0);
+            element.setOperation(operation);
+            element.cleanseSubElements(operation);
+        }
+
+        for (AbstractData element : entityIDs) {
+            element.setID(0);
+            element.setVersion(0);
+            element.setOperation(operation);
+            element.cleanseSubElements(operation);
+        }
+
+        for (AbstractData element : languagesUsed) {
+            element.setID(0);
+            element.setVersion(0);
+            element.setOperation(operation);
+            element.cleanseSubElements(operation);
+        }
+
+        for (AbstractData element : legalStatuses) {
+            element.setID(0);
+            element.setVersion(0);
+            element.setOperation(operation);
+            element.cleanseSubElements(operation);
+        }
+
+        for (AbstractData element : genders) {
+            element.setID(0);
+            element.setVersion(0);
+            element.setOperation(operation);
+            element.cleanseSubElements(operation);
+        }
+
+        for (AbstractData element : nameEntries) {
+            element.setID(0);
+            element.setVersion(0);
+            element.setOperation(operation);
+            element.cleanseSubElements(operation);
+        }
+
+        for (AbstractData element : occupations) {
+            element.setID(0);
+            element.setVersion(0);
+            element.setOperation(operation);
+            element.cleanseSubElements(operation);
+        }
+
+        for (AbstractData element : relations) {
+            element.setID(0);
+            element.setVersion(0);
+            element.setOperation(operation);
+            element.cleanseSubElements(operation);
+        }
+
+        for (AbstractData element : resourceRelations) {
+            element.setID(0);
+            element.setVersion(0);
+            element.setOperation(operation);
+            element.cleanseSubElements(operation);
+        }
+
+        for (AbstractData element : functions) {
+            element.setID(0);
+            element.setVersion(0);
+            element.setOperation(operation);
+            element.cleanseSubElements(operation);
+        }
+
+        for (AbstractData element : places) {
+            element.setID(0);
+            element.setVersion(0);
+            element.setOperation(operation);
+            element.cleanseSubElements(operation);
+        }
+
+        for (AbstractData element : subjects) {
+            element.setID(0);
+            element.setVersion(0);
+            element.setOperation(operation);
+            element.cleanseSubElements(operation);
+        }
+
+        return;
+    }
 
     public static void main(String[] args) {
         String test = "{\n            \"dataType\": \"SNACDate\",\n            \"fromDate\": \"1860-08-13\",\n            \"fromDateOriginal\": \"1860-08-13\",\n            \"fromType\": {\n                \"id\": \"689\",\n                \"term\": \"Birth\",\n                \"uri\": \"http:\\/\\/socialarchive.iath.virginia.edu\\/control\\/term#Birth\",\n                \"type\": \"date_type\"\n            },\n            \"toDate\": \"1926-11-03\",\n            \"toDateOriginal\": \"1926-11-03\",\n            \"toType\": {\n                \"id\": \"690\",\n                \"term\": \"Death\",\n                \"uri\": \"http:\\/\\/socialarchive.iath.virginia.edu\\/control\\/term#Death\",\n                \"type\": \"date_type\"\n            },\n            \"isRange\": true,\n            \"id\": \"25298391\",\n            \"version\": \"3694520\"\n        "
