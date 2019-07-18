@@ -173,7 +173,7 @@ public class Resource extends AbstractData {
     /**
      * Get title of the archival resource
      *
-     * @return string Resource title
+     * @return Resource title
      */
     public String getTitle() {
         return this.title;

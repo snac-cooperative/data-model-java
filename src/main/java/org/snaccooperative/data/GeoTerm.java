@@ -296,6 +296,8 @@ public class GeoTerm {
             if ((this.getCountryCode() != null && !this.getCountryCode().equals(g.getCountryCode())) ||
                     (this.getCountryCode() == null && g.getCountryCode() != null))
                 return false;
+        } else {
+            return false;
         }
         return true;
     }
