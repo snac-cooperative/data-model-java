@@ -9,7 +9,7 @@
         "type": "entity_type",
         "description": null
     },
-    "otherRecordIDs": [
+    "sameAsRelations": [
         {
             "dataType": "SameAs",
             "type": {

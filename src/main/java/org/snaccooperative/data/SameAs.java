@@ -3,7 +3,7 @@
 /**
  * Snac SameAs File
  *
- * Contains the data class for sameAs or otherRecordID information
+ * Contains the data class for sameAs or sameAsRelation information
  *
  * License:
  *
@@ -24,17 +24,17 @@ package org.snaccooperative.data;
 public class SameAs extends AbstractData {
 
     /**
-     * @var string text of this sameAs or otherRecordID
+     * @var string text of this sameAs or sameAsRelation
      */
     private String text;
 
     /**
-     * @var string URI of this sameAs or otherRecordID
+     * @var string URI of this sameAs or sameAsRelation
      */
     private String uri;
 
     /**
-     * @var snacdataTerm Type of this sameAs or otherRecordID
+     * @var snacdataTerm Type of this sameAs or sameAsRelation
      */
     private Term type;
 
@@ -49,7 +49,7 @@ public class SameAs extends AbstractData {
     }
 
     /**
-     * Get the text of this sameAs or otherRecordID
+     * Get the text of this sameAs or sameAsRelation
      *
      * @return string The description text/xml
      *
@@ -60,18 +60,18 @@ public class SameAs extends AbstractData {
     }
 
     /**
-     * Get the URI of this sameAs or otherRecordID
+     * Get the URI of this sameAs or sameAsRelation
      *
-     * @return string The uri of this sameAs or otherRecordID
+     * @return string The uri of this sameAs or sameAsRelation
      */
     public String getURI() {
         return this.uri;
     }
 
     /**
-     * Get the type of this sameAs or otherRecordID
+     * Get the type of this sameAs or sameAsRelation
      *
-     * @return snacdataTerm The type of this sameAs or otherRecordID
+     * @return snacdataTerm The type of this sameAs or sameAsRelation
      */
     public Term getType() {
         return this.type;
@@ -98,14 +98,14 @@ public class SameAs extends AbstractData {
     }
 
     /**
-     * Set the URI of this sameAs or otherRecordID
+     * Set the URI of this sameAs or sameAsRelation
      */
     public void setURI(String uri) {
         this.uri = uri;
     }
 
     /**
-     * Set the type of this sameAs or otherRecordID
+     * Set the type of this sameAs or sameAsRelation
      */
     public void setType(Term type) {
         this.type = type;

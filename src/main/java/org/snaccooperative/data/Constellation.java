@@ -27,7 +27,7 @@ import java.util.List;
             "status" => this.status,
             "ark" => this.ark,
             "entityType" => this.entityType == null ? null : this.entityType->toArray(shorten),
-            "otherRecordIDs" => array(),
+            "sameAsRelations" => array(),
             "entityIDs" => array(),
             "maintenanceStatus" => this.maintenanceStatus == null ? null : this.maintenanceStatus->toArray(shorten),
             "maintenanceAgency" => this.maintenanceAgency,
@@ -91,7 +91,7 @@ public class Constellation extends AbstractData {
     private Term entityType = null;
 
     /**
-     * Other Record ID List
+     * SameAs Relations List
      *
      * From EAC-CPF tag(s):
      *
@@ -100,7 +100,7 @@ public class Constellation extends AbstractData {
      *
      * @var snacdataSameAs[] Other record IDs by which this constellation may be known
      */
-    private List<SameAs> otherRecordIDs = null;
+    private List<SameAs> sameAsRelations = null;
 
 
     /**
@@ -383,7 +383,7 @@ public class Constellation extends AbstractData {
         super();
         this.setDataType("Constellation");
         this.setMaxDateCount(AbstractData.MAX_LIST_SIZE);
-        this.otherRecordIDs = new ArrayList<>();
+        this.sameAsRelations = new ArrayList<>();
         this.sources = new ArrayList<>();
         this.maintenanceEvents = new ArrayList<>();
         this.nameEntries = new ArrayList<>();
@@ -435,9 +435,9 @@ public class Constellation extends AbstractData {
      * @return snacdataSameAs[] Other record IDs by which this constellation may be known
      *
      */
-    public List<SameAs> getOtherRecordIDs()
+    public List<SameAs> getSameAsRelations()
     {
-        return this.otherRecordIDs;
+        return this.sameAsRelations;
     }
 
     /**
@@ -820,13 +820,13 @@ public class Constellation extends AbstractData {
      * Adds an alternate record id
      *
      */
-    public void addOtherRecordID(SameAs other) {
+    public void addSameAsRelation(SameAs other) {
 
-        this.otherRecordIDs.add(other);
+        this.sameAsRelations.add(other);
     }
 
-    public void setOtherRecordIDs(List<SameAs> others) {
-        this.otherRecordIDs = new ArrayList<>(others);
+    public void setSameAsRelations(List<SameAs> others) {
+        this.sameAsRelations = new ArrayList<>(others);
     }
 
     /**
@@ -1220,7 +1220,7 @@ public class Constellation extends AbstractData {
         boolean strict = true;
         boolean checkSubcomponents = true;
 
-        if (!this.checkArrayEqual(this.getOtherRecordIDs(), c.getOtherRecordIDs(), strict, checkSubcomponents))
+        if (!this.checkArrayEqual(this.getSameAsRelations(), c.getSameAsRelations(), strict, checkSubcomponents))
             return false;
         if (!this.checkArrayEqual(this.getEntityIDs(), c.getEntityIDs(), strict, checkSubcomponents))
             return false;
@@ -1317,7 +1317,7 @@ public class Constellation extends AbstractData {
         foreach (this.nationalities as &element)
             element->collateSCMCitationsBySource(sources);
 
-        foreach (this.otherRecordIDs as &element)
+        foreach (this.sameAsRelations as &element)
             element->collateSCMCitationsBySource(sources);
 
         foreach (this.entityIDs as &element)
@@ -1391,7 +1391,7 @@ public class Constellation extends AbstractData {
         foreach (this.nationalities as &element)
             element->updateSCMCitation(oldSource, newSource);
 
-        foreach (this.otherRecordIDs as &element)
+        foreach (this.sameAsRelations as &element)
             element->updateSCMCitation(oldSource, newSource);
 
         foreach (this.entityIDs as &element)
@@ -1474,10 +1474,10 @@ public class Constellation extends AbstractData {
             intersection->setEntityType(this.getEntityType());
         }
 
-        result = this.diffArray(this.getOtherRecordIDs(), other->getOtherRecordIDs(), strict, checkSubcomponents);
-        intersection->otherRecordIDs = result["intersection"];
-        first->otherRecordIDs = result["first"];
-        second->otherRecordIDs = result["second"];
+        result = this.diffArray(this.getSameAsRelations(), other->getSameAsRelations(), strict, checkSubcomponents);
+        intersection->sameAsRelations = result["intersection"];
+        first->sameAsRelations = result["first"];
+        second->sameAsRelations = result["second"];
 
         result = this.diffArray(this.getEntityIDs(), other->getEntityIDs(), strict, checkSubcomponents);
         intersection->entityIDs = result["intersection"];
@@ -1704,12 +1704,12 @@ public class Constellation extends AbstractData {
             this.addNationality(element);
         }
 
-        foreach (combine->otherRecordIDs as &element) {
+        foreach (combine->sameAsRelations as &element) {
             element->setID(null);
             element->setVersion(null);
             element->setOperation(snacdataAbstractData::OPERATION_INSERT);
             element->cleanseSubElements();
-            this.addOtherRecordID(element);
+            this.addSameAsRelation(element);
         }
 
         foreach (combine->entityIDs as &element) {
@@ -1865,7 +1865,7 @@ public class Constellation extends AbstractData {
             element.cleanseSubElements(operation);
         }
 
-        for (AbstractData element : otherRecordIDs) {
+        for (AbstractData element : sameAsRelations) {
             element.setID(0);
             element.setVersion(0);
             element.setOperation(operation);

@@ -8,7 +8,7 @@
         "uri": null,
         "description": null
     },
-    "otherRecordIDs": [],
+    "sameAsRelations": [],
     "maintenanceStatus": null,
     "maintenanceAgency": null,
     "maintenanceEvents": [],

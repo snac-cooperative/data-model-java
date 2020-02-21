@@ -2,7 +2,7 @@
 
 /**
  * Abstract Class that contains methods to handle controlled vocab-containing
- * objects.  For example, Gender, OtherRecordIDs, etc, which must be versioned
+ * objects.  For example, Gender, SameAsRelations, etc, which must be versioned
  * but also contain links to controlled vocabularies.
  *
  * License:
