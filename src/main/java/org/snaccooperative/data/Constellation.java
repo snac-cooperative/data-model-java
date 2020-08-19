@@ -235,6 +235,7 @@ public class Constellation extends AbstractData {
      *
      * @var snacdataBiogHist[] BiogHist entries for this constellation (in XML strings)
      */
+    @JsonProperty("biogHists")
     private List<BiogHist> biogHists = null;
 
     /**
