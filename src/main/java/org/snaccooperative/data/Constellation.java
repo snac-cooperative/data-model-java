@@ -235,7 +235,6 @@ public class Constellation extends AbstractData {
      *
      * @var snacdataBiogHist[] BiogHist entries for this constellation (in XML strings)
      */
-    @JsonProperty("biogHists")
     private List<BiogHist> biogHists = null;
 
     /**
@@ -591,11 +590,10 @@ public class Constellation extends AbstractData {
      * @return snacdataBiogHist[] An array of BiogHist ordered by language 3 letter code, or an empty list
      * if no BiogHist exists for this Constellation
      */
-    public List<BiogHist> getBiogHistList()
+    public List<BiogHist> getBiogHists()
     {
         return this.biogHists;
     }
-
 
     /**
      * Get the BiogHist
@@ -1237,7 +1235,7 @@ public class Constellation extends AbstractData {
             return false;
         if (!this.checkArrayEqual(this.getOccupations(), c.getOccupations(), strict, checkSubcomponents))
             return false;
-        if (!this.checkArrayEqual(this.getBiogHistList(), c.getBiogHistList(), strict, checkSubcomponents))
+        if (!this.checkArrayEqual(this.getBiogHists(), c.getBiogHists(), strict, checkSubcomponents))
             return false;
         if (!this.checkArrayEqual(this.getRelations(), c.getRelations(), strict, checkSubcomponents))
             return false;
@@ -1515,7 +1513,7 @@ public class Constellation extends AbstractData {
         first->occupations = result["first"];
         second->occupations = result["second"];
 
-        result = this.diffArray(this.getBiogHistList(), other->getBiogHistList(), strict, checkSubcomponents);
+        result = this.diffArray(this.getBiogHists(), other->getBiogHists(), strict, checkSubcomponents);
         intersection->biogHists = result["intersection"];
         first->biogHists = result["first"];
         second->biogHists = result["second"];
