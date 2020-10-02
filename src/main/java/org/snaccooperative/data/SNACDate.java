@@ -170,6 +170,7 @@ public class SNACDate extends AbstractData {
 
     public SNACDate() {
         super();
+        this.setDataType("SNACDate");
         fromRange.put("notBefore", null);
         fromRange.put("notAfter", null);
         toRange.put("notBefore", null);

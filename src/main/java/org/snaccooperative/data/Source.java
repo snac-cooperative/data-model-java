@@ -69,6 +69,7 @@ public class Source extends AbstractData {
      */
     public Source() {
         super();
+        this.setDataType("Source");
         this.setMaxDateCount(0);
     }
 
@@ -110,7 +111,7 @@ public class Source extends AbstractData {
     /**
      * Get the citation of this source
      *
-     * @return string The citation 
+     * @return string The citation
      *
      */
     public String getCitation()
