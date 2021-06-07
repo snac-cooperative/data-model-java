@@ -1261,7 +1261,7 @@ public class Constellation extends AbstractData {
         return true;
     }
 
-    private boolean checkArrayEqual(List a, List b, boolean strict, boolean checkSub) {
+    private boolean checkArrayEqual(List<? extends Object> a, List<? extends Object> b, boolean strict, boolean checkSub) {
         // note: checkSub and strict are currently unused.
         return a.containsAll(b) && b.containsAll(a);
     }
