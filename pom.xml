@@ -4,7 +4,7 @@
 
     <groupId>org.snaccooperative</groupId>
     <artifactId>datamodel</artifactId>
-    <version>1.1.1</version>
+    <version>1.1.2</version>
     <build>
         <plugins>
             <plugin>
@@ -21,6 +21,13 @@
             </plugin>
         </plugins>
     </build>
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub Packages</name>
+            <url>https://maven.pkg.github.com/snac-cooperative/data-model-java</url>
+        </repository>
+    </distributionManagement>
     <dependencies>
     <dependency>
         <groupId>com.fasterxml.jackson.core</groupId>
