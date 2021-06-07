@@ -33,8 +33,8 @@ jobs:
           release_name: ${{ steps.version.outputs.version }}
           tag_name: ${{ github.ref }}
           body: Testing build
-          env:
-            GITHUB_TOKEN: ${{ github.token }}
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
       - name: upload jar 
         uses: actions/upload-release-asset@v1
         env:
