@@ -21,7 +21,7 @@ jobs:
         uses: actions/setup-java@v2
         with:
           java-version: '11'
-          server-id: 'adopt'
+          distribution: 'adopt'
       - name: Package JAR
         run: mvn -B package
       - name: release
