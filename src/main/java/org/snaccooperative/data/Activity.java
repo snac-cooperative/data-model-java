@@ -1,9 +1,7 @@
-
-
 /**
- * Snac Function File
+ * Snac Activity File
  *
- * Contains the data class for functions
+ * Contains the data class for activities
  *
  * License:
  *
@@ -16,34 +14,34 @@
 package org.snaccooperative.data;
 
 /**
- * Function data storage class
+ * Activity data storage class
  *
  *  See the abstract parent class for common methods setDBInfo() and getDBInfo().
  *
  * @author Robbie Hott
  *
  */
-public class SNACFunction extends AbstractData {
+public class Activity extends AbstractData {
 
     /**
      * Vocabulary Term
      *
      * From EAC-CPF tag(s):
      *
-     * * function/term
+     * * activity/term
      *
-     * @var snacdataTerm Function controlled vocabulary term
+     * @var snacdataTerm activity controlled vocabulary term
      */
     private Term term;
 
     /**
-     * Type of Function
+     * Type of activity
      *
      * From EAC-CPF tag(s):
      *
-     * * function/@localType
+     * * activity/@localType
      *
-     * @var snacdataTerm Type of the function
+     * @var snacdataTerm Type of the activity
      */
     private Term type;
 
@@ -53,9 +51,9 @@ public class SNACFunction extends AbstractData {
      *
      * From EAC-CPF tag(s):
      *
-     * * function/descriptiveNote
+     * * activity/descriptiveNote
      *
-     * @var string Descriptive note for the function
+     * @var string Descriptive note for the activity
      */
     private String note;
 
@@ -64,30 +62,30 @@ public class SNACFunction extends AbstractData {
      *
      * From EAC-CPF tag(s):
      *
-     * * function/term/@vocabularySource
+     * * activity/term/@vocabularySource
      *
-     * @var string Vocabulary source for the function
+     * @var string Vocabulary source for the activity
      */
     private String vocabularySource = null;
 
     /**
      * Constructor
      *
-     * Functions may only have one date object.
+     * Activities may only have one date object.
      */
-    public SNACFunction() {
+    public Activity() {
         super();
-        this.setDataType("SNACFunction");
+        this.setDataType("Activity");
         this.setMaxDateCount(1);
     }
 
 
     /**
-     * Get the Term for this function
+     * Get the Term for this activity
      *
-     * * function/term
+     * * activity/term
      *
-     * @return snacdataTerm Function controlled vocabulary term
+     * @return snacdataTerm Activity controlled vocabulary term
      *
      */
     public Term getTerm()
@@ -96,11 +94,11 @@ public class SNACFunction extends AbstractData {
     }
 
     /**
-     * Get the type of this function
+     * Get the type of this activity
      *
-     * * function/@localType
+     * * activity/@localType
      *
-     * @return snacdataTerm Type of the function
+     * @return snacdataTerm Type of the activity
      *
      */
     public Term getType()
@@ -112,11 +110,11 @@ public class SNACFunction extends AbstractData {
     /**
      * Get Descriptive Note
      *
-     * Get the human-readable descriptive note for this function
+     * Get the human-readable descriptive note for this activity
      *
-     * * function/descriptiveNote
+     * * activity/descriptiveNote
      *
-     * @return string Descriptive note for the function
+     * @return string Descriptive note for the activity
      *
      */
     public String getNote()
@@ -127,9 +125,9 @@ public class SNACFunction extends AbstractData {
     /**
      * Get the vocabulary source
      *
-     * * function/term/@vocabularySource
+     * * activity/term/@vocabularySource
      *
-     * @return string Vocabulary source for the function
+     * @return string Vocabulary source for the activity
      *
      */
     public String getVocabularySource()
@@ -146,11 +144,11 @@ public class SNACFunction extends AbstractData {
      * @return string A human-readable summary string of this object
      */
     public String toString() {
-        return "Function: " + this.term.getTerm();
+        return "Activity: " + this.term.getTerm();
     }
 
     /**
-     * Set the term of this function
+     * Set the term of this activity
      *
      * This comes from the controlled vocabulary
      */
@@ -160,7 +158,7 @@ public class SNACFunction extends AbstractData {
     }
 
     /**
-     * Set the type of this function
+     * Set the type of this activity
      */
     public void setType(Term type) {
 
@@ -176,7 +174,7 @@ public class SNACFunction extends AbstractData {
     }
 
     /**
-     * Set the descriptive note for this function
+     * Set the descriptive note for this activity
      */
     public void setNote(String note) {
 
@@ -188,13 +186,13 @@ public class SNACFunction extends AbstractData {
      */
     public boolean equals(Object other) {
 
-        if (other == null || ! (other instanceof SNACFunction))
+        if (other == null || ! (other instanceof Activity))
             return false;
 
         if (!super.equals(other))
             return false;
 
-        SNACFunction f = (SNACFunction) other;
+        Activity f = (Activity) other;
 
         if ((this.getVocabularySource() != null && ! this.getVocabularySource().equals(f.getVocabularySource())) ||
                 (this.getVocabularySource() == null && f.getVocabularySource() != null))

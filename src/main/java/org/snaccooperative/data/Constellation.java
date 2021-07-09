@@ -42,7 +42,7 @@ import java.util.List;
             "biogHists" => array(),
             "relations" => array(),
             "resourceRelations" => array(),
-            "functions" => array(),
+            "activities" => array(),
             "places" => array(),
             "subjects" => array(),
             "nationalities" => array(),
@@ -260,15 +260,15 @@ public class Constellation extends AbstractData {
     private List<ResourceRelation> resourceRelations = null;
 
     /**
-     * Function list
+     * Activity list
      *
      * From EAC-CPF tag(s):
      *
-     * * eac-cpf/cpfDescription/description/function/*
+     * * eac-cpf/cpfDescription/description/activity/*
      *
-     * @var snacdataSNACFunction[] Functions
+     * @var snacdataActivity[] Activities
      */
-    private List<SNACFunction> functions = null;
+    private List<Activity> activities = null;
 
     /**
      * Place list
@@ -391,7 +391,7 @@ public class Constellation extends AbstractData {
         this.occupations = new ArrayList<>();
         this.relations = new ArrayList<>();
         this.resourceRelations = new ArrayList<>();
-        this.functions = new ArrayList<>();
+        this.activities = new ArrayList<>();
         this.places = new ArrayList<>();
         this.subjects = new ArrayList<>();
         this.legalStatuses = new ArrayList<>();
@@ -652,14 +652,14 @@ public class Constellation extends AbstractData {
     }
 
     /**
-     * Get the Functions
+     * Get the Activities
      *
-     * @return snacdataSNACFunction[] Functions
+     * @return snacdataActivity[] Activities
      *
      */
-    public List<SNACFunction> getFunctions()
+    public List<Activity> getActivities()
     {
-        return this.functions;
+        return this.activities;
     }
 
     /**
@@ -975,16 +975,16 @@ public class Constellation extends AbstractData {
     }
 
     /**
-     * Add function
+     * Add activity
      *
      */
-    public void addFunction(SNACFunction function) {
+    public void addActivity(Activity activity) {
 
-        this.functions.add(function);
+        this.activities.add(activity);
     }
 
-    public void setFunctions(List<SNACFunction> funs) {
-        this.functions = new ArrayList<>(funs);
+    public void setActivities(List<Activity> acts) {
+        this.activities = new ArrayList<>(acts);
     }
 
     /**
@@ -1241,7 +1241,7 @@ public class Constellation extends AbstractData {
             return false;
         if (!this.checkArrayEqual(this.getResourceRelations(), c.getResourceRelations(), strict, checkSubcomponents))
             return false;
-        if (!this.checkArrayEqual(this.getFunctions(), c.getFunctions(), strict, checkSubcomponents))
+        if (!this.checkArrayEqual(this.getActivities(), c.getActivities(), strict, checkSubcomponents))
             return false;
         if (!this.checkArrayEqual(this.getPlaces(), c.getPlaces(), strict, checkSubcomponents))
             return false;
@@ -1346,7 +1346,7 @@ public class Constellation extends AbstractData {
         foreach (this.resourceRelations as &element)
             element->collateSCMCitationsBySource(sources);
 
-        foreach (this.functions as &element)
+        foreach (this.activities as &element)
             element->collateSCMCitationsBySource(sources);
 
         foreach (this.places as &element)
@@ -1420,7 +1420,7 @@ public class Constellation extends AbstractData {
         foreach (this.resourceRelations as &element)
             element->updateSCMCitation(oldSource, newSource);
 
-        foreach (this.functions as &element)
+        foreach (this.activities as &element)
             element->updateSCMCitation(oldSource, newSource);
 
         foreach (this.places as &element)
@@ -1528,10 +1528,10 @@ public class Constellation extends AbstractData {
         first->resourceRelations = result["first"];
         second->resourceRelations = result["second"];
 
-        result = this.diffArray(this.getFunctions(), other->getFunctions(), strict, checkSubcomponents);
-        intersection->functions = result["intersection"];
-        first->functions = result["first"];
-        second->functions = result["second"];
+        result = this.diffArray(this.getActivities(), other->getActivities(), strict, checkSubcomponents);
+        intersection->activities = result["intersection"];
+        first->activities = result["first"];
+        second->activities = result["second"];
 
         result = this.diffArray(this.getPlaces(), other->getPlaces(), strict, checkSubcomponents);
         intersection->places = result["intersection"];
@@ -1775,12 +1775,12 @@ public class Constellation extends AbstractData {
             this.addResourceRelation(element);
         }
 
-        foreach (combine->functions as &element) {
+        foreach (combine->activities as &element) {
             element->setID(null);
             element->setVersion(null);
             element->setOperation(snacdataAbstractData::OPERATION_INSERT);
             element->cleanseSubElements();
-            this.addFunction(element);
+            this.addActivity(element);
         }
 
         foreach (combine->places as &element) {
@@ -1927,7 +1927,7 @@ public class Constellation extends AbstractData {
             element.cleanseSubElements(operation);
         }
 
-        for (AbstractData element : functions) {
+        for (AbstractData element : activities) {
             element.setID(0);
             element.setVersion(0);
             element.setOperation(operation);
