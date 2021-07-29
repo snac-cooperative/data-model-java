@@ -241,4 +241,9 @@ public class Source extends AbstractData {
         return true;
     }
 
+    @Override
+    public String toString() {
+        return "Source: " + this.citation + ", (" + this.uri + "). Found Data: " + this.text;
+    }
+
 }
