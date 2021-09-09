@@ -140,7 +140,7 @@ public class ConstellationRelation extends AbstractData {
      */
     public ConstellationRelation() {
         super();
-        this.setDataType("Relation");
+        this.setDataType("ConstellationRelation");
         this.setMaxDateCount(1);
     }
 
