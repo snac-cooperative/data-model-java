@@ -52,6 +52,7 @@ public class Language extends AbstractData {
      */
     public Language() {
         super();
+        this.setDataType("Language");
         this.setMaxDateCount(0);
     }
 
