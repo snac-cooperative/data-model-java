@@ -307,7 +307,12 @@ public class ConstellationRelation extends AbstractData {
      * @return string A human-readable summary string of this object
      */
     public String toString() {
-        return "Relation: " + (this.type != null ? this.type.getTerm() + " " : "") + this.content;
+        if (this.content != null) {
+            return "Relation: " + (this.type != null ? this.type.getTerm() + " " : "") + this.content;
+        }
+        else {
+            return "Relation: " + (this.type != null ? this.type.getTerm() + " " : "") + this.targetConstellation;
+        }
     }
 
     /**
